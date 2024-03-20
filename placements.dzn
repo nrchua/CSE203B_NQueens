@@ -1,0 +1,7 @@
+N = 8;
+K = 1;
+initial_rows = [1];
+initial_cols = [1];
+
+
+
