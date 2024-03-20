@@ -116,7 +116,7 @@ def create_data(N, num_data=8):
     
     # Create folders if it doesnt exist
     for nq in num_queens:
-        folder_path = f"./{N:03}_{int(nq):02}"
+        folder_path = f"./board_initializations/{N:03}_{int(nq):03}"
         if not os.path.exists(folder_path):
             os.makedirs(folder_path, exist_ok=True)
     
@@ -124,7 +124,7 @@ def create_data(N, num_data=8):
     for nq in num_queens:
         for i in range(num_data):
             # Create filename
-            file_name = f"./{N:03}_{int(nq):02}/{i:03d}.csv"
+            file_name = f"./board_initializations/{N:03}_{int(nq):03}/{i:03d}.csv"
             # Make a configuration
             _, coords = make_configuration(N, nq)
             # Open the file
