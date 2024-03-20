@@ -80,7 +80,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         main(sys.argv[1])
     else:
-        print("Please provide a CSV file as an argument")
+        print("Please provide a folder as an argument")
     """
     n = 64  # Size of the chessboard
     initial_placements = []#[(0, 0)]  # Pre-placed queens (row, column), 0-indexed

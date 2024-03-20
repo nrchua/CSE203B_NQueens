@@ -134,6 +134,25 @@ def create_data(N, num_data=8):
                 # Now, add the coordinates
                 for j in range(len(coords)):
                     writer.writerow(coords[j])
+
+            # Make equivalent.dzn file
+            with open(f"./board_initializations/{N:03}_{int(nq):03}/{i:03d}.dzn", "w") as file:
+                # Add size of board
+                file.write(f"N = {N};\n")
+                # Add number of queens
+                file.write(f"K = {len(coords)};\n")
+
+                # Loop over all configurations
+                dzn_rows = []
+                dzn_cols = []
+                for j in range(len(coords)):
+                    r = coords[j][0] + 1
+                    c = coords[j][1] + 1
+                    dzn_rows.append(r)
+                    dzn_cols.append(c)
+                # Add the initializations to the file
+                file.write(f"initial_rows = {str(dzn_rows)};\n")
+                file.write(f"initial_cols = {str(dzn_cols)};\n")
             count += 1    
 
 def main():
